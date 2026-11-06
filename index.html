@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giới thiệu bản thân - Phan Thị Thu Thủy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #edf4e9;
+    color: #294331;
+    overflow-x: hidden;
+}
+
+/* MENU */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #153b26;
+    padding: 14px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 11px 16px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    background: #c5e6a6;
+    color: #153b26;
+}
+
+/* ẢNH NỀN */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+        linear-gradient(rgba(4,30,15,0.5), rgba(4,30,15,0.75)),
+        url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    animation: appear 1.2s ease both;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 72px);
+    line-height: 1.25;
+    color: #d8efbd;
+    text-shadow: 2px 3px 12px black;
+}
+
+.hero h2 {
+    color: white;
+    font-size: clamp(21px, 4vw, 30px);
+    margin-top: 20px;
+}
+
+.hero p {
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: #c5e6a6;
+    color: #173d28;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* TIÊU ĐỀ */
+.heading {
+    text-align: center;
+    padding: 45px 20px 25px;
+}
+
+.heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: #285b38;
+    font-size: clamp(28px, 5vw, 40px);
+}
+
+.heading p {
+    margin-top: 12px;
+    color: #607866;
+}
+
+/* NỘI DUNG */
+.container {
+    max-width: 1100px;
+    margin: 20px auto 50px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border-left: 6px solid #719c62;
+    box-shadow: 0 6px 20px rgba(25,65,35,0.12);
+    scroll-margin-top: 100px;
+    animation: appear 0.8s ease both;
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #285b38;
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.card p {
+    color: #405b47;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.highlight {
+    color: #39784b;
+    font-weight: bold;
+}
+
+/* THÔNG ĐIỆP */
+.message {
+    max-width: 1060px;
+    margin: 35px auto 50px;
+    padding: 40px 25px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #214c30, #65945c);
+    color: white;
+    scroll-margin-top: 100px;
+}
+
+.message h2 {
+    font-family: 'Playfair Display', serif;
+    color: #e1f5d0;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.message p {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* CHÂN TRANG */
+footer {
+    background: #153b26;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    line-height: 1.9;
+}
+
+/* CHUYỂN ĐỘNG */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LÁ RƠI */
+.leaf {
+    position: fixed;
+    top: -35px;
+    z-index: 5;
+    pointer-events: none;
+    animation: fall linear infinite;
+    opacity: 0.65;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* ĐIỆN THOẠI */
+@media (max-width: 650px) {
+    .navbar {
+        gap: 3px;
+        padding: 10px 5px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+        padding: 9px 10px;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 24px 20px;
+    }
+
+    .message {
+        margin: 25px 20px 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 5 NÚT ĐIỀU HƯỚNG -->
+<nav class="navbar">
+    <a href="#banthan">Bản thân</a>
+    <a href="#giadinh">Gia đình</a>
+    <a href="#tinhcach">Tính cách</a>
+    <a href="#sothich">Sở thích</a>
+    <a href="#thongdiep">Thông điệp</a>
+</nav>
+
+<!-- PHẦN ĐẦU -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>GIỚI THIỆU<br>BẢN THÂN</h1>
+        <h2>PHAN THỊ THU THỦY</h2>
+        <p>🌿 Chào mừng mọi người đến với trang web của tôi! 🌿</p>
+        <a href="#banthan" class="hero-button">Khám phá bản thân</a>
+    </div>
+</header>
+
+<div class="heading">
+    <h2>🌳 ĐÔI NÉT VỀ TÔI 🌳</h2>
+    <p>Hãy cùng tìm hiểu về bản thân tôi nhé!</p>
+</div>
+
+<!-- CÁC PHẦN GIỚI THIỆU -->
+<main class="container">
+
+    <section class="card" id="banthan">
+        <h2>🌱 Bản thân</h2>
+        <p>
+            Xin chào mọi người! Tôi tên là
+            <span class="highlight">Phan Thị Thu Thủy</span>.
+            Hiện tại, tôi đang là học sinh trường
+            THPT Số 1 Phan Bội Châu và sinh sống
+            tại tỉnh Đắk Lắk.
+        </p>
+    </section>
+
+    <section class="card" id="giadinh">
+        <h2>🏡 Gia đình</h2>
+        <p>
+            Gia đình tôi hiện có 5 thành viên.
+            Mọi người luôn yêu thương, quan tâm và
+            động viên tôi trong cuộc sống cũng như
+            trong học tập. Đây chính là nguồn động lực
+            giúp tôi cố gắng và hoàn thiện bản thân
+            mỗi ngày.
+        </p>
+    </section>
+
+    <section class="card" id="tinhcach">
+        <h2>💚 Tính cách</h2>
+        <p>
+            Về tính cách, tôi là người vui vẻ, hòa đồng
+            và luôn mong muốn mang đến không khí thoải mái
+            khi giao tiếp với mọi người. Tuy nhiên, đôi khi
+            tôi vẫn còn khá rụt rè và chưa thật sự tự tin
+            khi đứng trước đám đông. Vì vậy, tôi luôn cố gắng
+            khắc phục điểm yếu này để trở nên tự tin
+            và mạnh dạn hơn.
+        </p>
+    </section>
+
+    <section class="card" id="sothich">
+        <h2>🎵 Sở thích</h2>
+        <p>
+            Trong thời gian rảnh, tôi thường nghe nhạc
+            và xem phim để thư giãn sau những giờ học tập
+            căng thẳng. Đây cũng là những sở thích giúp tôi
+            giải tỏa áp lực và có thêm năng lượng tích cực.
+        </p>
+    </section>
+
+</main>
+
+<!-- THÔNG ĐIỆP VÀ LỜI CẢM ƠN -->
+<section class="message" id="thongdiep">
+    <h2>🌳 Thông điệp của tôi</h2>
+    <p>
+        Cuối cùng, tôi muốn gửi đến mọi người một thông điệp:
+        Hãy luôn tin tưởng vào bản thân, không ngừng nỗ lực
+        và kiên trì theo đuổi ước mơ. Bởi vì mỗi sự cố gắng
+        hôm nay đều là nền tảng góp phần tạo nên thành công
+        trong tương lai.
+    </p>
+    <p style="margin-top: 20px;">
+        Cảm ơn mọi người đã dành thời gian đọc bài giới thiệu của tôi!
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 - WEBSITE GIỚI THIỆU BẢN THÂN</p>
+    <p>🌿 PHAN THỊ THU THỦY 🌿</p>
+    <p>Cảm ơn mọi người đã ghé thăm!</p>
+</footer>
+
+<!-- HIỆU ỨNG LÁ RƠI -->
+<script>
+(function () {
+    const leaves = ["🍃", "🌿", "🍂"];
+
+    for (let i = 0; i < 12; i++) {
+        const leaf = document.createElement("span");
+
+        leaf.className = "leaf";
+        leaf.textContent = leaves[i % leaves.length];
+        leaf.style.left = (i * 8 + 3) + "%";
+        leaf.style.animationDuration = (8 + (i % 5) * 2) + "s";
+        leaf.style.animationDelay = (i % 6) + "s";
+        leaf.style.fontSize = (16 + (i % 4) * 4) + "px";
+
+        document.body.appendChild(leaf);
+    }
+})();
+</script>
+
+</body>
+</html>
